@@ -107,11 +107,11 @@ h1 {
 }
 
 
-.vysledek {
+.vysledky {
 	display: none;
 }
 
-.vysledek h2 {
+.vysledkyH2 {
 	margin-top: 0;
 	font-size: 36px;
 	color: var(--cervena);

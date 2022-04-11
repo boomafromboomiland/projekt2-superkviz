@@ -62,6 +62,7 @@ prvaOtazka();
 function druhaOtazka() {
   console.log('Posledná otázka je pred tebou!');
   console.log(kvizoveOdpovede);
+  //vymazanie starých odpovedí
   odpovedi.innerHTML = '';
   otazka.innerText = kvizoveOtazky[1].h2;
   obrazek.src = kvizoveOtazky[1].obrazek;
@@ -82,7 +83,7 @@ function druhaOtazka() {
 };
 
 function tretiaOtazka() {
-  console.log('Ideme na výsledky!');
+  console.log('Tvoje hodnotenie je na ceste!');
   console.log(kvizoveOdpovede);
   odpovedi.innerHTML = '';
   otazka.innerText = kvizoveOtazky[2].h2;
@@ -97,15 +98,22 @@ function tretiaOtazka() {
     );
     odpovedUzivatela.onclick = () => {
       kvizoveOdpovede.push(kvizoveOtazky[2].odpovede[i]);
-      vysledky();
+      vysledkyUzivatela();
     };
     odpovedi.append(odpovedUzivatela);
   }
 };
 
-function vysledky() {
+function vysledkyUzivatela() {
+  //vymazanie obsahu
   kviz.innerText = '';
   kviz.className = 'vysledky';
+  //vytvorenie headline
+  let text = document.createElement('h2');
+  text.innerText = "Tvoje hodnotenie";
+  kviz.appendChild(text);
+
+  //výsledky prvej otázky
 };
 
 //priradenie obsahu, čísla a classy

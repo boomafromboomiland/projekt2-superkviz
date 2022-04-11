@@ -60,8 +60,9 @@ function prvaOtazka() {
 prvaOtazka();
 
 function druhaOtazka() {
-  console.log('Posledná otázka!');
+  console.log('Posledná otázka je pred tebou!');
   console.log(kvizoveOdpovede);
+  odpovedi.innerHTML = '';
   otazka.innerText = kvizoveOtazky[1].h2;
   obrazek.src = kvizoveOtazky[1].obrazek;
   poradi.innerText = kvizoveOtazky[1].poradi;
@@ -78,29 +79,44 @@ function druhaOtazka() {
     };
     odpovedi.append(odpovedUzivatela);
   }
-}
+};
 
 function tretiaOtazka() {
   console.log('Ideme na výsledky!');
   console.log(kvizoveOdpovede);
+  odpovedi.innerHTML = '';
   otazka.innerText = kvizoveOtazky[2].h2;
   obrazek.src = kvizoveOtazky[2].obrazek;
   poradi.innerText = kvizoveOtazky[2].poradi;
 
   for (let i = 0; i < kvizoveOtazky[2].odpovede.length; i++) {
     let odpovedUzivatela = createLi(
-      kvizoveOtazky[0].odpovede[i],
+      kvizoveOtazky[2].odpovede[i],
       i,
       'odpoved'
     );
     odpovedUzivatela.onclick = () => {
       kvizoveOdpovede.push(kvizoveOtazky[2].odpovede[i]);
-      druhaOtazka();
     };
     odpovedi.append(odpovedUzivatela);
   }
-}
+};
 
+function vysledky() {
+  console.log(kvizoveOdpovede);
+  odpovedi.innerHTML = '';
+  otazka.innerText = kvizoveOtazky[2].h2;
+  obrazek.src = kvizoveOtazky[2].obrazek;
+  poradi.innerText = kvizoveOtazky[2].poradi;
+
+  for (let i = 0; i < kvizoveOtazky[2].odpovede.length; i++) {
+    let odpovedUzivatela = createLi(
+      kvizoveOtazky[2].odpovede[i],
+      i,
+      'odpoved'
+    );
+  }
+};
 
 //priradenie obsahu, čísla a classy
 function createLi(html, cisloOdpovedi, className) {

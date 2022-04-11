@@ -24,12 +24,29 @@ const otazky = [
   }
 ];
 
-//vytvorenie premennych
-let otazka = document.getElementById('otazka');
-let obrazek = document.getElementById('obrazek');
+//vytvorenie premenných
+//let otazka = document.getElementById('otazka');
+//let obrazek = document.getElementById('obrazek');
 let odpovedi = document.getElementById('odpovedi');
 
-let poradieOtazok = 1;
+//funckia pre zmenu otázky
+function zmenaOtazky() {
+  let otazka = document.getElementById('otazka');
+  let obrazek = document.getElementById('obrazek')
+
+  // vypísanie príslušnej otázky
+  otazka.innerHTML = kvizoveOtazky[cisloOtazky].otazka;
+  // vypísanie poradia otázky?
+  document.getElementById('poradi').innerHTML = "Ozázka " + (cisloOtazky++) + "/" + kvizoveOtazky.length;
+  // načítanie obrázku pre každú otázku
+  obrazek.setAttribute('src', kvizoveOtazky[cisloOtazky].obrazek);
+
+  let otazka = kvizoveOtazky [cisloOtazky];
+  let odpovedi = otazka.odpovedi;
+};
+
+
+/*let poradieOtazok = 1;
 document.querySelector('#poradieOtazok').textContent = poradieOtazok;
 
 let prvaOtazka = document.getElementById('otazka-jedna').dataset.odpoved;
@@ -54,6 +71,6 @@ answer.forEach((klik) => {
 if (answer === spravnaOdpoved) {
     console.log('Správna odpoveď')
 } else (answer !== spravnaOdpoved) 
-    console.log('Nesprávna odpoveď');
+    console.log('Nesprávna odpoveď');*/
 
 

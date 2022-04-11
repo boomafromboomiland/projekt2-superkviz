@@ -97,25 +97,15 @@ function tretiaOtazka() {
     );
     odpovedUzivatela.onclick = () => {
       kvizoveOdpovede.push(kvizoveOtazky[2].odpovede[i]);
+      vysledky();
     };
     odpovedi.append(odpovedUzivatela);
   }
 };
 
 function vysledky() {
-  console.log(kvizoveOdpovede);
-  odpovedi.innerHTML = '';
-  otazka.innerText = kvizoveOtazky[2].h2;
-  obrazek.src = kvizoveOtazky[2].obrazek;
-  poradi.innerText = kvizoveOtazky[2].poradi;
-
-  for (let i = 0; i < kvizoveOtazky[2].odpovede.length; i++) {
-    let odpovedUzivatela = createLi(
-      kvizoveOtazky[2].odpovede[i],
-      i,
-      'odpoved'
-    );
-  }
+  kviz.innerText = '';
+  kviz.className = 'vysledky';
 };
 
 //priradenie obsahu, čísla a classy

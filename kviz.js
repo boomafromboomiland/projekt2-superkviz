@@ -1,3 +1,5 @@
+
+// vytvorenie pola otazok a odpovedi
 const otazky = [
   {
     h2: 'Ako sa volá táto ikonická hračka z 80. rokov?',
@@ -21,6 +23,11 @@ const otazky = [
     indexOdpovedi: 0,
   }
 ];
+
+//vytvorenie premennych
+let otazka = document.getElementById('otazka');
+let obrazek = document.getElementById('obrazek');
+let odpovedi = document.getElementById('odpovedi');
 
 let poradieOtazok = 1;
 document.querySelector('#poradieOtazok').textContent = poradieOtazok;

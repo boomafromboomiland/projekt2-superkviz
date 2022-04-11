@@ -1,76 +1,40 @@
-
+console.log('JS funguje');
 // vytvorenie pola otazok a odpovedi
 const otazky = [
   {
     h2: 'Ako sa volá táto ikonická hračka z 80. rokov?',
     obrazek: 'obrazky/moncicak.jpg',
-    answer: ['Kočičák', 'Mončičák', 'Opičák'],
-    spravnaOdpoved: 'Mončičák',
-    indexOdpovedi: 1,
+    answer: {
+      a: 'Kočičák',
+      b: 'Mončičák',
+      c: 'Opičák'
+    },
+    spravnaOdpoved: 'b',
+    indexOdpovede: [1],
   },
   {
     h2: 'Aké je Matejové najobľúbenejšie ovocie?',
     obrazek: 'obrazky/ovoce.jpg',
-    answer: ['Kokos', 'Melón', 'Jahoda', 'Ani jedna z možností'],
-    spravnaOdpoved: 'Melón',
-    indexOdpovedi: 1,
+    answer: {
+      a: 'Kokos',
+      b: 'Melón',
+      c: 'Jahoda',
+      d: 'Ani jedna z možností'
+    },
+    spravnaOdpoved: 'c',
+    indexOdpovede: [0],
   },
   {
     h2: 'Pre úspešné absolvovanie kurzu je potrebné...',
     obrazek: 'obrazky/pivo.jpg',
-    answer: ['Vedieť JavaScript', 'Chodiť po kurze na pivo'],
-    spravnaOdpoved: 'Vedieť JavaScript',
-    indexOdpovedi: 0,
+    answer: {
+      a: 'Vedieť JavaScript',
+      b: 'Chodiť po kurze na pivo'
+    },
+    spravnaOdpoved: 'a',
+    indexOdpovede: [0],
   }
 ];
 
-//vytvorenie premenných
-//let otazka = document.getElementById('otazka');
-//let obrazek = document.getElementById('obrazek');
-let odpovedi = document.getElementById('odpovedi');
-
-//funckia pre zmenu otázky
-function zmenaOtazky() {
-  let otazka = document.getElementById('otazka');
-  let obrazek = document.getElementById('obrazek')
-
-  // vypísanie príslušnej otázky
-  otazka.innerHTML = kvizoveOtazky[cisloOtazky].otazka;
-  // vypísanie poradia otázky?
-  document.getElementById('poradi').innerHTML = "Ozázka " + (cisloOtazky++) + "/" + kvizoveOtazky.length;
-  // načítanie obrázku pre každú otázku
-  obrazek.setAttribute('src', kvizoveOtazky[cisloOtazky].obrazek);
-
-  let otazka = kvizoveOtazky [cisloOtazky];
-  let odpovedi = otazka.odpovedi;
-};
-
-
-/*let poradieOtazok = 1;
-document.querySelector('#poradieOtazok').textContent = poradieOtazok;
-
-let prvaOtazka = document.getElementById('otazka-jedna').dataset.odpoved;
-let druhaOtazka = document.getElementById('otazka-dva').dataset.odpoved;
-let tretiaOtazka = document.getElementById('otazka-tri').dataset.odpoved;
-
-console.log ('prvaOtazka');
-console.log ('druhaOtazka');
-console.log ('tretiaOtazka');
-
-//const answer = document.querySelectorAll('.answer');
-//console.log('answer');
-
-let answer = document.querySelectorAll('#answer').dataset.odpoved
-
-answer.forEach((klik) => {
-  klik.addEventListener('click', (udalost) => {
-  console.log('Správna odpoveď je ' + spravnaOdpoved);
-  });
-});
-
-if (answer === spravnaOdpoved) {
-    console.log('Správna odpoveď')
-} else (answer !== spravnaOdpoved) 
-    console.log('Nesprávna odpoveď');*/
 
 

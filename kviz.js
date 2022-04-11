@@ -9,7 +9,7 @@ const kvizoveOtazky = [
     poradi: 'Otázka 1 z 3',
   },
   {
-    h2: 'Aké je Matejové najobľúbenejšie ovocie?',
+    h2: 'Aké je Matejove najobľúbenejšie ovocie?',
     obrazek: 'obrazky/2.jpg',
     odpovede: ['Kokos', 'Melón', 'Jahoda', 'Ani jedna z možností'],
     spravnaOdpoved: 'Melón',
@@ -79,7 +79,6 @@ function druhaOtazka() {
     odpovedi.append(odpovedUzivatela);
   }
 }
-druhaOtazka();
 
 function tretiaOtazka() {
   console.log('Ideme na výsledky!');
@@ -101,7 +100,6 @@ function tretiaOtazka() {
     odpovedi.append(odpovedUzivatela);
   }
 }
-tretiaOtazka();
 
 
 //priradenie obsahu, čísla a classy

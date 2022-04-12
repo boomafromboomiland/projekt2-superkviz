@@ -7,6 +7,7 @@ const kvizoveOtazky = [
     odpovede: ['Kočičák', 'Mončičák', 'Opičák'],
     spravnaOdpoved: 'Mončičák',
     poradi: 'Otázka 1 z 3',
+    indexOdpovede: 1,
   },
   {
     h2: 'Aké je Matejove najobľúbenejšie ovocie?',
@@ -14,6 +15,7 @@ const kvizoveOtazky = [
     odpovede: ['Kokos', 'Melón', 'Jahoda', 'Ani jedna z možností'],
     spravnaOdpoved: 'Melón',
     poradi: 'Otázka 2 z 3',
+    indexOdpovede: 0,
   },
   {
     h2: 'Pre úspešné absolvovanie kurzu je potrebné...',
@@ -21,6 +23,7 @@ const kvizoveOtazky = [
     odpovede: ['Vedieť JavaScript', 'Chodiť po kurze na pivo'],
     spravnaOdpoved: 'Vedieť JavaScript',
     poradi: 'Otázka 3 z 3',
+    indexOdpovede: 0,
   }
 ];
 
@@ -104,18 +107,6 @@ function tretiaOtazka() {
   }
 };
 
-function vysledkyUzivatela() {
-  //vymazanie obsahu
-  kviz.innerText = '';
-  kviz.className = 'vysledky';
-  //vytvorenie headline
-  let text = document.createElement('h2');
-  text.innerText = "Tvoje hodnotenie";
-  kviz.appendChild(text);
-
-  //výsledky prvej otázky
-};
-
 //priradenie obsahu, čísla a classy
 function createLi(html, cisloOdpovedi, className) {
   let odpovedUzivatela = document.createElement('li');
@@ -123,4 +114,17 @@ function createLi(html, cisloOdpovedi, className) {
   odpovedUzivatela.setAttribute('data-odpoved', cisloOdpovedi);
   odpovedUzivatela.classList.add(className);
   return odpovedUzivatela;
-}
+};
+
+function vysledkyUzivatela() {
+  //vymazanie obsahu
+  kviz.innerText = '';
+  kviz.className = 'vysledek';
+  //vytvorenie headline
+  let text = document.createElement('h2');
+  text.innerText = "Tvoje hodnotenie";
+  kviz.appendChild(text);
+
+  //výsledky prvej otázky
+  let prvaOtazka
+};

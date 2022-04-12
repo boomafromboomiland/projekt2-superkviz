@@ -156,4 +156,20 @@ function vysledkyUzivatela() {
   }
   kviz.appendChild(druhyVysledok);
 
+  //3. otázka
+  let tretiaOtazka = document.createElement('h3');
+  tretiaOtazka.innerText = "3. " + kvizoveOtazky[2].h2;
+  kviz.appendChild(tretiaOtazka);
+  //3. odpoveď
+  odpovedUzivatela = document.createElement('div');
+  odpovedUzivatela[2].innerText = "Tvoja odpoveď znela: " + kvizoveOdpovede[2];
+  //správnosť výsledku
+  let tretiVysledok = document.createElement('div');
+  if (kvizoveOdpovede[2] == spravnaOdpoved[2]){
+    tretiVysledok.innerText = "Toto je správna odpoveď!";
+  } else {
+    tretiVysledok.innerText = "Bohužiaľ, označil si nesprávnu odpoveď. Správna odpoveď znie: " + spravnaOdpoved[2];
+  }
+  kviz.appendChild(tretiVysledok);
+
 };

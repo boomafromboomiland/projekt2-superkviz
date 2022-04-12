@@ -126,5 +126,12 @@ function vysledkyUzivatela() {
   kviz.appendChild(text);
 
   //výsledky prvej otázky
-  let prvaOtazka
+  let prvaOtazka = document.createElement('h3');
+  prvaOtazka.innerText = "1. " + kvizoveOtazky[0].h2;
+  kviz.appendChild(prvaOtazka);
+
+  let odpovedUzivatela = document.createElement('div');
+  odpovedUzivatela.innerText = "Tvoja odpoveď znela: " + odpovedi.dataset.kvizoveOdpovede;
+  kviz.appendChild(odpovedUzivatela);
+
 };

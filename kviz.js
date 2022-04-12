@@ -7,7 +7,6 @@ const kvizoveOtazky = [
     odpovede: ['Kočičák', 'Mončičák', 'Opičák'],
     spravnaOdpoved: 'Mončičák',
     poradi: 'Otázka 1 z 3',
-    indexOdpovede: 1,
   },
   {
     h2: 'Aké je Matejove najobľúbenejšie ovocie?',
@@ -15,7 +14,6 @@ const kvizoveOtazky = [
     odpovede: ['Kokos', 'Melón', 'Jahoda', 'Ani jedna z možností'],
     spravnaOdpoved: 'Melón',
     poradi: 'Otázka 2 z 3',
-    indexOdpovede: 0,
   },
   {
     h2: 'Pre úspešné absolvovanie kurzu je potrebné...',
@@ -23,7 +21,6 @@ const kvizoveOtazky = [
     odpovede: ['Vedieť JavaScript', 'Chodiť po kurze na pivo'],
     spravnaOdpoved: 'Vedieť JavaScript',
     poradi: 'Otázka 3 z 3',
-    indexOdpovede: 0,
   }
 ];
 
@@ -36,6 +33,7 @@ let obsah = document.querySelector('#obsah');
 let poradi =  document.getElementById('poradi');
 let otazka = document.querySelector('#otazka');
 let kvizoveOdpovede = [];
+let spravnaOdpoved = ['Mončičák', 'Melón', 'Vedieť JavaScript'];
 
 
 //funcke pre zmenu otázok, odpovedí, img
@@ -129,9 +127,33 @@ function vysledkyUzivatela() {
   let prvaOtazka = document.createElement('h3');
   prvaOtazka.innerText = "1. " + kvizoveOtazky[0].h2;
   kviz.appendChild(prvaOtazka);
-
+  //prvá odpoveď
   let odpovedUzivatela = document.createElement('div');
-  odpovedUzivatela.innerText = "Tvoja odpoveď znela: " + odpovedi.dataset.kvizoveOdpovede;
+  odpovedUzivatela.innerText = "Tvoja odpoveď znela: " + kvizoveOdpovede[0];
   kviz.appendChild(odpovedUzivatela);
+  //správnosť výsledku
+  let prvyVysledok = document.createElement('div');
+  if (kvizoveOdpovede[0] == spravnaOdpoved[0]){
+    prvyVysledok.innerText = "Toto je správna odpoveď!";
+  } else {
+    prvyVysledok.innerText = "Bohužiaľ, označil si nesprávnu odpoveď. Správna odpoveď znie: " + spravnaOdpoved[0];
+  }
+  kviz.appendChild(prvyVysledok);
+
+  //2. otázka
+  let druhaOtazka = document.createElement('h3');
+  druhaOtazka.innerText = "2. " + kvizoveOtazky[1].h2;
+  kviz.appendChild(druhaOtazka);
+  //2. odpoveď
+  odpovedUzivatela = document.createElement('div');
+  odpovedUzivatela.innerText = "Tvoja odpoveď znela: " + kvizoveOdpovede[1];
+  //správnosť výsledku
+  let druhyVysledok = document.createElement('div');
+  if (kvizoveOdpovede[1] == spravnaOdpoved[1]){
+    druhyVysledok.innerText = "Toto je správna odpoveď!";
+  } else {
+    druhyVysledok.innerText = "Bohužiaľ, označil si nesprávnu odpoveď. Správna odpoveď znie: " + spravnaOdpoved[1];
+  }
+  kviz.appendChild(druhyVysledok);
 
 };

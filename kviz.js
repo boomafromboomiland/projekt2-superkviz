@@ -136,6 +136,8 @@ function vysledkyUzivatela() {
   let prvyVysledok = document.createElement('div');
   if (kvizoveOdpovede[0] == spravnaOdpoved[0]){
     prvyVysledok.innerText = "Toto je správna odpoveď!";
+    //pripočíta sa správna odpoveď
+    pocetSpravnychOdpovedi++;
   } else {
     prvyVysledok.innerText = "Bohužiaľ, označil si nesprávnu odpoveď. Správna odpoveď znie: " + spravnaOdpoved[0];
   }
@@ -153,6 +155,8 @@ function vysledkyUzivatela() {
   let druhyVysledok = document.createElement('div');
   if (kvizoveOdpovede[1] == spravnaOdpoved[1]){
     druhyVysledok.innerText = "Toto je správna odpoveď!";
+    //pripočíta sa správna odpoveď
+    pocetSpravnychOdpovedi++;
   } else {
     druhyVysledok.innerText = "Bohužiaľ, označil si nesprávnu odpoveď. Správna odpoveď znie: " + spravnaOdpoved[1];
   }
@@ -170,14 +174,15 @@ function vysledkyUzivatela() {
   let tretiVysledok = document.createElement('div');
   if (kvizoveOdpovede[2] == spravnaOdpoved[2]){
     tretiVysledok.innerText = "Toto je správna odpoveď!";
+    //pripočíta sa správna odpoveď
+    pocetSpravnychOdpovedi++;
   } else {
     tretiVysledok.innerText = "Bohužiaľ, označil si nesprávnu odpoveď. Správna odpoveď znie: " + spravnaOdpoved[2];
   }
   kviz.appendChild(tretiVysledok);
 
+  //výpočet správnosti
   let vyhodnotenie = document.createElement('h2');
   vyhodnotenie.innerText = "Uhádol si " + pocetSpravnychOdpovedi + " z 3 otázok. Tvoja úspešnosť je: " + Math.round((pocetSpravnychOdpovedi/3)*100) + "%.";
   kviz.appendChild(vyhodnotenie);
-
-
 };

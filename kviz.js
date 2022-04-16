@@ -122,6 +122,7 @@ function vysledkyUzivatela() {
   let text = document.createElement('h2');
   text.innerText = "Tvoje hodnotenie";
   kviz.appendChild(text);
+  let pocetSpravnychOdpovedi = 0;
 
   //výsledky prvej otázky
   let prvaOtazka = document.createElement('h3');
@@ -175,7 +176,8 @@ function vysledkyUzivatela() {
   kviz.appendChild(tretiVysledok);
 
   let vyhodnotenie = document.createElement('h2');
-  vyhodnotenie.innerText = "Uhádol si " +  + " z 3 otázok. Tvoja úspešnosť je: " + Math.round((kvizoveOdpovede/3)*100) + "%.";
+  vyhodnotenie.innerText = "Uhádol si " + pocetSpravnychOdpovedi + " z 3 otázok. Tvoja úspešnosť je: " + Math.round((pocetSpravnychOdpovedi/3)*100) + "%.";
   kviz.appendChild(vyhodnotenie);
+
 
 };

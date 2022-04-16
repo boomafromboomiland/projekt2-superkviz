@@ -174,4 +174,8 @@ function vysledkyUzivatela() {
   }
   kviz.appendChild(tretiVysledok);
 
+  let vyhodnotenie = document.createElement('h2');
+  vyhodnotenie.innerText = "Uhádol si " +  + " z 3 otázok. Tvoja úspešnosť je: " + Math.round((kvizoveOdpovede/3)*100) + "%.";
+  kviz.appendChild(vyhodnotenie);
+
 };

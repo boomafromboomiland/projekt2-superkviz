@@ -140,13 +140,14 @@ function vysledkyUzivatela() {
   }
   kviz.appendChild(prvyVysledok);
 
-  //2. otázka
+  //výsledky druhej otázky
   let druhaOtazka = document.createElement('h3');
   druhaOtazka.innerText = "2. " + kvizoveOtazky[1].h2;
   kviz.appendChild(druhaOtazka);
-  //2. odpoveď
+  //druhá odpoveď
   odpovedUzivatela = document.createElement('div');
   odpovedUzivatela.innerText = "Tvoja odpoveď znela: " + kvizoveOdpovede[1];
+  kviz.appendChild(odpovedUzivatela);
   //správnosť výsledku
   let druhyVysledok = document.createElement('div');
   if (kvizoveOdpovede[1] == spravnaOdpoved[1]){
@@ -156,13 +157,14 @@ function vysledkyUzivatela() {
   }
   kviz.appendChild(druhyVysledok);
 
-  //3. otázka
+  //výsledky tretej otázky
   let tretiaOtazka = document.createElement('h3');
   tretiaOtazka.innerText = "3. " + kvizoveOtazky[2].h2;
   kviz.appendChild(tretiaOtazka);
-  //3. odpoveď
+  //tretia odpoveď
   odpovedUzivatela = document.createElement('div');
-  odpovedUzivatela[2].innerText = "Tvoja odpoveď znela: " + kvizoveOdpovede[2];
+  odpovedUzivatela.innerText = "Tvoja odpoveď znela: " + kvizoveOdpovede[2];
+  kviz.appendChild(odpovedUzivatela);
   //správnosť výsledku
   let tretiVysledok = document.createElement('div');
   if (kvizoveOdpovede[2] == spravnaOdpoved[2]){
